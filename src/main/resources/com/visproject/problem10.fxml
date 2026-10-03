@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+
+<TabPane
+        fx:id="problemTabs"
+        prefHeight="653.0"
+        prefWidth="509.0"
+        tabClosingPolicy="UNAVAILABLE"
+        xmlns="http://javafx.com/javafx/21"
+        xmlns:fx="http://javafx.com/fxml/1"
+        fx:controller="com.visproject.controllers.Problem10Controller">
+
+    <tabs>
+
+        <Tab text="Бодлого">
+
+            <content>
+
+                <AnchorPane prefHeight="600.0" prefWidth="500.0">
+
+                    <children>
+
+                        <ImageView
+                                fx:id="backgroundImage"
+                                fitWidth="500.0"
+                                fitHeight="600.0"
+                                preserveRatio="false"/>
+
+                        <Rectangle
+                                width="500.0"
+                                height="600.0"
+                                fill="#06152188"/>
+
+                        <Label
+                                layoutX="20.0"
+                                layoutY="30.0"
+                                text="RGB7519 — Өсөх эсэх"
+                                style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+
+                        <ImageView
+                                fx:id="penguinImage"
+                                layoutX="420.0"
+                                layoutY="15.0"
+                                fitWidth="60.0"
+                                fitHeight="60.0"
+                                preserveRatio="true"/>
+
+                        <TextField
+                                fx:id="arrayField"
+                                layoutX="20.0"
+                                layoutY="100.0"
+                                prefWidth="400.0"
+                                promptText="Жишээ: 1 2 3 4 5"/>
+
+                        <Button
+                                layoutX="20.0"
+                                layoutY="160.0"
+                                prefWidth="150.0"
+                                text="Шалгах"
+                                onAction="#checkArray"/>
+
+                        <Label
+                                fx:id="resultLabel"
+                                layoutX="20.0"
+                                layoutY="230.0"
+                                prefWidth="400.0"
+                                style="-fx-font-size: 20px; -fx-text-fill: white; -fx-background-color: #06152199; -fx-background-radius: 10;"/>
+
+                        <Button
+                                layoutX="20.0"
+                                layoutY="310.0"
+                                prefWidth="160.0"
+                                text="← Өмнөх бодлого"
+                                onAction="#previousProblem"/>
+
+                    </children>
+
+                </AnchorPane>
+
+            </content>
+
+        </Tab>
+
+        <Tab text="Бүрэн тайлбар">
+
+            <content>
+
+                <ScrollPane fitToWidth="true">
+                    <content>
+                        <VBox alignment="TOP_CENTER" spacing="16.0">
+                            <ImageView
+                                    fx:id="problemImage"
+                                    fitWidth="470.0"
+                                    fitHeight="580.0"
+                                    preserveRatio="true"/>
+
+                            <Label
+                                    maxWidth="460.0"
+                                    wrapText="true"
+                                    text="RGB7519 — Өсөх эсэх&#10;&#10;Өгөгдсөн нэг хэмжээст массив өсөхөөр эрэмбэлэгдсэн бол YES, үгүй бол NO гэж хэвлэ."
+                                    style="-fx-font-size: 16px;"/>
+
+                            <Button
+                                    text="Бодлого руу буцах"
+                                    onAction="#showProblemTab"/>
+                        </VBox>
+                    </content>
+                </ScrollPane>
+
+            </content>
+
+        </Tab>
+
+    </tabs>
+
+</TabPane>
